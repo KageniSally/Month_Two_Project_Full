@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --secondary-color: #FFC107;
+    --primary-color: #FFFFFF;
+    --black: black;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Playfair Display", sans-serif;
+}
+
+
+.bxs-trash {
+    height: 20px;
+    width: 20px;
+    color: red;
+}
+.bxs-edit-alt{
+    height: 20px;
+    width: 20px;
+    color: rgb(17, 228, 17);
+}
+
+.message{
+    color: rgb(17, 228, 17);
+    font-style: italic;
+}

@@ -1,0 +1,33 @@
+<div class="adminContainerLeft">
+    <div class="admin-user">
+        <!-- <ion-icon name="person"></ion-icon> -->
+        <p class="adminUsername"></p>
+        <p class="adminEmail"></p>
+    </div>
+    <div class="adminLinks">
+        <div class="adminLink">
+            <!-- <ion-icon name="home"></ion-icon> -->
+            <h4 id="homeAdmin"><a [routerLink]="['/adminDashboard']">Home</a></h4>
+        </div>
+        <div class="adminLink">
+            <!-- <ion-icon name="airplane"></ion-icon> -->
+            <h4 id="toursAdmin"><a [routerLink]="['/adminDashboard/tours']">Tours</a></h4>
+        </div>
+        <div class="adminLink">
+            <!-- <ion-icon name="bed"></ion-icon> -->
+            <h4 id="hotelsAdmin"><a [routerLink]="['/adminDashboard/hotels']">Hotels</a></h4>
+        </div>
+        <div class="adminLink">
+            <!-- <ion-icon name="people"></ion-icon> -->
+            <h4 id="usersAdmin"><a [routerLink]="['/adminDashboard/users']">Users</a></h4>
+        </div>
+        <div class="adminLink">
+            <!-- <ion-icon name="bookmark"></ion-icon> -->
+            <h4 id="bookingsAdmin"><a [routerLink]="['/adminDashboard/bookings']">Bookings</a></h4>
+        </div>
+        <div class="adminLink">
+            <!-- <ion-icon name="log-out"></ion-icon> -->
+            <h4 id="logoutAdmin">Logout</h4>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,24 @@
+<app-user-navbar></app-user-navbar>
+<div class="toursUserDiv" *ngIf="tours.length ; else noTours">
+    <div class="tours-display-all">
+
+        <div class="tour-all-container" *ngFor="let tour of tours let i =index">
+            <div class="image-tours"><img src="{{tour.image}}" alt="tour"></div>
+            <div class="each-tour-details">
+                <h4>{{tour.name}}</h4>
+                <p class="destination">{{tour.destination}}</p>
+                <p>{{tour.description}}</p>
+                <div class="last-thing-tour">
+                    <p>{{ tour.price| currency:'Ksh'}}</p><button (click)="openBookingForm()"> Book Now</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<ng-template #noTours>
+    <i>No Tours Yet</i>
+</ng-template>
+
+<app-bookings-add></app-bookings-add>
+
+<app-footer-user></app-footer-user>

@@ -1,0 +1,42 @@
+
+<p class="message">{{message}}</p>
+<div class="tours-table" *ngIf="tours.length  ;else noTours">
+  
+    <table id="tours-table-display">
+        <thead>
+            <tr>
+                <th>Tour ID</th>
+                <th>Tour Name</th>
+                <th>Hotels</th>
+                <th>Destination</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th> </th>
+            </tr>
+        </thead>
+        <tbody class="display-tours">
+            <tr  *ngFor="let tour of tours; let i=index">
+                <td>{{tour.id}}</td>
+                <td>{{tour.name}}</td>
+                <td>
+                    <select name="" id="">
+                        <option value="">View the hotels</option>
+                        <option *ngFor="let hotel of tour.hotels" [value]="hotel">{{ hotel }}</option>
+                    </select>
+                </td>
+                <td>{{tour.destination}}</td>
+                <td> {{tour.description}}</td>
+                <td>{{tour.price| currency:'Ksh'}}</td>
+                <td>
+                    <i class='bx bxs-edit-alt'></i>
+                    <i id="trash" class='bx bxs-trash' (click)="deleteTour(tour)"></i>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<ng-template #noTours>
+    <h2><i>No tours to show</i></h2>
+</ng-template>

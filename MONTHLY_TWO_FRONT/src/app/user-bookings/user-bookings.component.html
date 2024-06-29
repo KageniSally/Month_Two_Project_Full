@@ -1,0 +1,31 @@
+<app-user-navbar></app-user-navbar>
+<div class="bookingsUserDiv" *ngIf="bookings.length; else noBookings">
+    <div class="bookings-all-display">
+        <div class="each-booking" *ngFor="let booking of bookings let i=index">
+            <h4>{{booking.tour_id}}</h4>
+            <h6>{{booking.hotel_id}}</h6>
+                <div class="dates-booking">
+                    <div class="date-booking">
+                        <h5>Start Date</h5>
+                            <p>{{booking.startDate}}</p>
+                    </div>
+                    <div class="date-booking">
+                        <h5>End Date</h5>
+                            <p>{{booking.endDate}}</p>
+                    </div>
+                </div>
+                <div class="last-part-booking">
+                    <p>{{booking.people}}</p>
+                    <button>Edit Booking</button>
+                </div>
+        </div>
+
+    </div>
+
+</div>
+
+<ng-template #noBookings>
+    <i>No Bookings Yet</i>
+</ng-template>
+
+<app-footer-user></app-footer-user>

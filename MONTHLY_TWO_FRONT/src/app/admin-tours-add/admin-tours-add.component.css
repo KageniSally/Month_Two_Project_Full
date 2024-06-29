@@ -1,0 +1,42 @@
+.add-tours {
+    margin-top: 30px;
+    width: 65vw;
+    margin-left: 40px;
+}
+
+.add-tours fieldset {
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+.add-tours input {
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.74);
+    padding-left: 15px;
+}
+
+
+
+.add-tours button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.addTourHotels{
+    display: flex;
+    gap: 15px;
+}
+
+span i{
+    color: red;
+}

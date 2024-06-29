@@ -1,0 +1,37 @@
+
+.hotels-table {
+    display: flex;
+    justify-content: center;
+    width: 65vw;
+
+}
+
+
+#hotels-table-display {
+    border: none;
+    width: 90%;
+}
+
+
+
+
+
+#hotels-table-display th
+ {
+    text-align: center;
+    background-color: #ffc10796;
+    font-weight: 700;
+    font-size: 15px;
+    width: 15%;
+    height: 20px;
+}
+
+
+#hotels-table-display td {
+    text-align: center;
+    background-color: #F8F8F8;
+    font-weight: 300;
+    font-size: 13px;
+    height: 20px;
+}
+

@@ -1,0 +1,24 @@
+<app-user-navbar></app-user-navbar>
+<div class="hotelsUserDiv" *ngIf="hotels.length; else noHotels">
+    <div class="hotels-all-display">
+        <div class="hotel-all-container" *ngFor="let hotel of hotels let i=index">
+            <div class="image-hotels"><img src="{{hotel.image}}" alt="hotel"></div>
+            <div class="each-hotel-details">
+                <h4>{{hotel.name}}</h4>
+                <h4 class="rating">{{hotel.starRating}}</h4>
+                <div class="last-thing-hotel">
+                    <p>{{hotel.location}}</p><button>Book Now</button>
+                </div>
+            </div>
+
+        </div>
+
+
+    </div>
+</div>
+
+<ng-template #noHotels>
+    <i>No Hotels at the moment</i>
+</ng-template>
+
+<app-footer-user></app-footer-user>

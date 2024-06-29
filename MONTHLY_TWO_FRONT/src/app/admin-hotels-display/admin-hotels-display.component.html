@@ -1,0 +1,33 @@
+<p class="message">{{message}}</p>
+
+<div class="hotels-table" *ngIf="hotels; else noHotels">
+    <table id="hotels-table-display">
+        <thead>
+            <tr>
+                <th>Hotel ID</th>
+                <th>Hotel Name</th>
+                <th>Location</th>
+                <th>Rating</th>
+                <th></th>
+
+            </tr>
+        </thead>
+        <tbody class="display-hotels">
+            <tr *ngFor="let hotel of hotels">
+                <td>{{hotel.id}}</td>
+                <td>{{hotel.name}}</td>
+                <td>{{hotel.location}}</td>
+                <td> {{hotel.starRating}}</td>
+                <td><i class='bx bxs-edit-alt'></i>
+                    <i id="trash" class='bx bxs-trash' (click)="deleteHotel(hotel)"></i>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<ng-template #noHotels>
+    <i>No hotels yet</i>
+</ng-template>

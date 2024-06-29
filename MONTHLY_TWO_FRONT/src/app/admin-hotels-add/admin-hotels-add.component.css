@@ -1,0 +1,38 @@
+
+.add-hotels {
+    margin-top: 30px;
+    width: 65vw;
+    margin-left: 40px;
+}
+
+
+.add-hotels fieldset {
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    gap: 15px;
+}
+
+
+.add-hotels input {
+    height: 35px;
+    border-radius: 10px;
+    border: 1px solid rgba(0, 0, 0, 0.74);
+    padding-left: 15px;
+}
+
+
+.add-hotels button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: 35px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+span i{
+    color: red;
+}

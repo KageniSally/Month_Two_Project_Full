@@ -1,0 +1,79 @@
+footer {
+    height: 200px;
+    width: 100%;
+}
+
+.links {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 45px;
+    margin-top: 30px;
+    background-color: white;
+    height: 180px;
+    width: 100%;
+}
+
+.company-info,
+.legal,
+.features,
+.resources,
+.get-in-touch {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+}
+
+
+.company-info h4,
+.legal h4,
+.features h4,
+.resources h4,
+.get-in-touch h4 {
+    font-size: 12px;
+}
+
+.get-in-touch ion-icon {
+    color: var(--primary-color);
+    height: 15px;
+    width: 15px;
+    padding-right: 5px;
+}
+
+.get-in-touch p {
+    font-size: 12px;
+}
+
+.company-info a,
+.legal a,
+.features a,
+.resources a,
+.get-in-touch a {
+    font-size: 12px;
+    text-decoration: none;
+    color: black;
+}
+
+.last-thing {
+    display: flex;
+    justify-content: space-between;
+    gap: 250px;
+    height: 50px;
+    align-items: center;
+    background-color: var(--secondary-color);
+}
+
+.copyright p {
+    font-size: 12px;
+    margin-left: 250px;
+}
+
+.socials ion-icon {
+    color: var(--primary-color);
+    height: 15px;
+    width: 15px;
+}
+
+.twitter {
+    margin-right: 250px;
+}

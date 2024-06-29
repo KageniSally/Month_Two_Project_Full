@@ -1,0 +1,18 @@
+<div class="user-nav">
+    <div class="logo">
+        <h1>H</h1>
+        <h2>TOURS AND TRAVELS</h2>
+    </div>
+    <div class="user-nav-links">
+        <h4><a routerLink="">HOME</a></h4>
+        <h4 id="hotelsUser"><a [routerLink]="['/userDashboard/hotels']"  routerLinkActiveOptions="{exact:true}">HOTELS</a></h4>
+        <h4 id="toursUser"><a [routerLink]="['/userDashboard/tours']" routerLinkActiveOptions="{exact:true}">TOURS</a></h4>
+        <h4 id="bookingsUser"><a [routerLink]="['/userDashboard/bookings']"routerLinkActiveOptions="{exact:true}">BOOKINGS</a></h4>
+        <h4 id="logoutUser" ><a  (click)="auth.logOut()">LOGOUT</a></h4>
+    </div>
+    <div class="nav-username">
+        <!-- <ion-icon name="person-outline"></ion-icon> -->
+        <p class="userUsername" id="username"></p>
+    </div>
+</div>
+<hr>

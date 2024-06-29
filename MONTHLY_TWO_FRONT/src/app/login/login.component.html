@@ -1,0 +1,25 @@
+<div class="container-login">
+    <div class="auth-message"></div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <h3>Login</h3>
+        <p>{{message}}</p>
+        <div class="username">
+            <span *ngIf="form.get('email')?.touched && !form.get('email')?.valid"><i>Email is requred!!!!</i></span>
+
+            <label for="">Email</label>
+            <input type="text" id="username-inp" placeholder="Email" formControlName="email">
+        </div>
+        <div class="password">
+            <span *ngIf="form.get('password')?.touched && !form.get('password')?.valid"><i>Password is requred!!!!</i></span>
+
+            <label for="">Password</label>
+            <input type="text" id="password-inp" placeholder="Password" formControlName="password">
+        </div>
+        <button id="btn-login" [disabled]="!form.valid">Sign In</button>
+        <p>Dont have an account? <a routerLink="register">Sign Up</a></p>
+        <!-- <div class="socials-login">
+            <div class="social-back"><ion-icon name="logo-google"></ion-icon></div>
+            <div class="social-back"><ion-icon name="logo-github"></ion-icon></div>
+            <div class="social-back"><ion-icon name="logo-facebook"></ion-icon></div>
+        </div> -->
+    </form>

@@ -1,0 +1,39 @@
+<div class="add-tours">
+    <div class="edit-user-success-message"></div>
+    <div class="edit-user-error-message"></div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <fieldset>
+
+            <legend>Add Tours</legend>
+            <p class="message">{{message}}</p>
+            <span *ngIf="form.get('name')?.touched && !form.get('name')?.valid"><i>Name is requred!!!!</i></span>
+            <input type="text" placeholder="Tour Name" id="tourInput" required formControlName="name">
+
+            <span *ngIf="form.get('image')?.touched && !form.get('image')?.valid"><i>Image is requred!!!!</i></span>
+            <input type="text" placeholder="Image URL" id="imageInput" required formControlName="image">
+
+            <div class="addTourHotels">
+                <label for="">Hotels</label>
+                <button type="button" (click)="addHotel()">Add Hotel</button>
+                <div formArrayName="hotels">
+                    <div *ngFor="let hotel of hotels.controls; let i = index">
+                        <input type="text" placeholder="Hotel" [formControlName]="i">
+                    </div>
+                </div>
+            </div>
+
+
+            <span *ngIf="form.get('destination')?.touched && !form.get('destination')?.valid"><i>Destination is
+                    requred!!!!</i></span>
+            <input type="text" placeholder="Destination" id="destinationInput" required formControlName="destination">
+
+            <span *ngIf="form.get('description')?.touched && !form.get('description')?.valid"><i>Description is
+                    requred!!!!</i></span>
+            <input type="text" placeholder="Description" id="descriptionInput" required formControlName="description">
+
+            <span *ngIf="form.get('price')?.touched && !form.get('price')?.valid"><i>Price is requred!!!!</i></span>
+            <input type="text" placeholder="Price" id="priceInput" required formControlName="price">
+            <button id="addTour-btn" [disabled]="!form.valid">Add Tour</button>
+        </fieldset>
+    </form>
+</div>

@@ -1,0 +1,23 @@
+
+<div class="add-hotels">
+    <div class="edit-user-success-message"></div>
+    <div class="edit-user-error-message"></div>
+    <form action="" (ngSubmit)="onSubmit() " [formGroup]="form">
+        <fieldset>
+            <p class="message">{{message}}</p>
+            <legend>Add Hotels</legend>
+            <span *ngIf="form.get('name')?.touched && !form.get('name')?.valid"><i>Name is requred!!!!</i></span>
+            <input type="text" placeholder="Hotel Name" id="hotelInput" formControlName="name">
+
+            <span *ngIf="form.get('image')?.touched && !form.get('image')?.valid"><i>Image is requred!!!!</i></span>
+            <input type="text" placeholder="Image URL" id="hotelImageInput" formControlName="image">
+
+            <span *ngIf="form.get('location')?.touched && !form.get('location')?.valid"><i>Location is requred!!!!</i></span>
+            <input type="text" placeholder="Location" id="hotelLocationInput" formControlName="location">
+
+            <span *ngIf="form.get('starRating')?.touched && !form.get('starRating')?.valid"><i>Rating is requred!!!!</i></span>
+            <input type="text" placeholder="Rating" id="RatingInput" formControlName="starRating">
+            <button id="addHotel-btn" [disabled]="!form.valid">Add Hotel</button>
+        </fieldset>
+    </form>
+</div>

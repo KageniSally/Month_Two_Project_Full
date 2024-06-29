@@ -1,0 +1,36 @@
+<div class="container-register">
+    <div class="auth-message"></div>
+    <form (ngSubmit)="onSubmit()" [formGroup]="form">
+        <h3>Sign Up</h3>
+        <div class="username">
+            <span *ngIf="form.get('name')?.touched && !form.get('name')?.valid"><i>Name is requred!!!!</i></span>
+            <label for="">Username</label>
+            <input type="text" id="username" placeholder="Username" formControlName="name">
+        </div>
+        <div class="email">
+            <span *ngIf="form.get('email')?.touched && !form.get('email')?.valid"><i>Email is requred!!!!</i></span>
+            <label for="">Email</label>
+            <input type="text" id="email" placeholder="Email" formControlName="email">
+        </div>
+
+        <div class="password">
+            <span *ngIf="form.get('password')?.touched && !form.get('password')?.valid"><i>Password is
+                    {{errorPassword}}!!!!</i></span>
+
+            <label for="">Password</label>
+            <input type="text" id="password" placeholder="Password" formControlName="password">
+        </div>
+        <!-- <div class="password">
+            <label for="">Confirm Password</label>
+            <input type="text" id="confpassword" placeholder="Confirm Password">
+        </div> -->
+        <button id="btn-reg" [disabled]="!form.valid">Sign Up</button>
+        <p>Already have an account? <a routerLink="login">Login</a></p>
+        <!-- <div class="socials-login">
+            <div class="social-back"><ion-icon name="logo-google"></ion-icon></div>
+            <div class="social-back"><ion-icon name="logo-github"></ion-icon></div>
+            <div class="social-back"><ion-icon name="logo-facebook"></ion-icon></div>
+        </div> -->
+    </form>
+
+</div>

@@ -1,0 +1,33 @@
+<div class="users-table" *ngIf="users.length; else noUsers">
+    <table id="users-table-display">
+        <thead>
+            <tr>
+                <th>User ID</th>
+                <th>User Name</th>
+                <th>User Email</th>
+                <th>Role</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="display-users">
+            <tr *ngFor="let user of users">
+                <td>{{user.id}}</td>
+                <td>{{user.email}}</td>
+                <td>{{user.name}}</td>
+                <td><select name="" id="">
+                        <option value="">Check User Role</option>
+                        <option value="">{{user.role_id}}</option>
+                    </select></td>
+                <td><i class='bx bxs-edit-alt'></i>
+                    <i id="trash" class='bx bxs-trash' (click)="deleteUser(user)"></i>
+                </td>
+                <!-- <td> <ion-icon class="deleteUserBin" name="trash-outline"></ion-icon></td> -->
+            </tr>
+        </tbody>
+    </table>
+
+</div>
+
+<ng-template #noUsers>
+    <i>No Users yet</i>
+</ng-template>

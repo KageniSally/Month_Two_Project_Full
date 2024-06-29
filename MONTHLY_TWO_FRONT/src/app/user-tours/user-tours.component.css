@@ -1,0 +1,67 @@
+.toursUserDiv {
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    width: 90%;
+    /* height: 550px; */
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    /* display: block; */
+    align-items: center;
+}
+
+.tour-all-container {
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+
+.tours-display-all {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 80%;
+    /* border-color: 2px solid black; */
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+
+}
+
+.image-tours img {
+    width: 100%;
+    height: 200px;
+}
+
+.each-tour-details {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.tours-all-display h4 {
+    font-size: 20px;
+}
+
+
+.last-thing-tour {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.last-thing-tour p {
+    font-size: 14px;
+}
+
+.last-thing-tour button {
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
+    height: 35px;
+    width: 100px;
+    border: none;
+}
+
+.last-thing-tour button:hover {
+    background-color: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+}

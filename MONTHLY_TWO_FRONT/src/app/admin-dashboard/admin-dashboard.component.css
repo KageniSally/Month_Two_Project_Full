@@ -1,0 +1,85 @@
+.adminContainerRight {
+    background-color: #F8F8F8;
+    width: 72vw;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 15px;
+
+    /* height: 94.25vh; */
+}
+
+.adminContainer {
+    width: 100%;
+    display: flex;
+    background-color: var(--primary-color);
+    /* border: 2px solid red; */
+}
+
+.home {
+    background-color: var(--primary-color);
+    border-radius: 25px;
+    width: 90%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.first-admin-div,
+.second-admin-div {
+    height: 150px;
+    /* width: 100%; */
+
+    display: flex;
+    gap: 10px;
+}
+
+
+.left-first-div,
+.right-first-div,
+.left-second-div,
+.right-second-div {
+    /* background-color: #ffc10796; */
+    width: 30vw;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    gap: 10px;
+}
+
+.left-first-div,
+.right-second-div {
+    background-color: #ffc1076c;
+}
+
+.right-first-div,
+.left-second-div {
+    background-color: rgba(0, 0, 0, 0.493);
+}
+
+.backgroundForIcon {
+    background-color: #FFC107;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.backgroundForIcon ion-icon {
+    color: var(--primary-color);
+    height: 20px;
+    width: 20px;
+}
+
+.admin-main-links h3 {
+    cursor: pointer;
+}

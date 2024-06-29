@@ -1,0 +1,31 @@
+.users-table {
+    display: flex;
+    justify-content: center;
+    width: 65vw;
+
+}
+
+#users-table-display {
+    border: none;
+    width: 90%;
+}
+
+
+
+
+#users-table-display th {
+    text-align: center;
+    background-color: #ffc10796;
+    font-weight: 700;
+    font-size: 15px;
+    width: 15%;
+    height: 20px;
+}
+
+#users-table-display td {
+    text-align: center;
+    background-color: #F8F8F8;
+    font-weight: 300;
+    font-size: 13px;
+    height: 20px;
+}
