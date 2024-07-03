@@ -99,3 +99,7 @@ i{
     color: red;
     font-size: small;
 }
+form .errorMessage{
+color: red;
+font-size: large;
+}

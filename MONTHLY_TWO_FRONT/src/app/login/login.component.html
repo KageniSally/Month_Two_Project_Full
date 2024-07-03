@@ -2,7 +2,7 @@
     <div class="auth-message"></div>
     <form (ngSubmit)="onSubmit()" [formGroup]="form">
         <h3>Login</h3>
-        <p>{{message}}</p>
+        <p *ngIf="(error$|async)" class="errorMessage">{{error$|async}}</p>
         <div class="username">
             <span *ngIf="form.get('email')?.touched && !form.get('email')?.valid"><i>Email is requred!!!!</i></span>
 
@@ -10,7 +10,8 @@
             <input type="text" id="username-inp" placeholder="Email" formControlName="email">
         </div>
         <div class="password">
-            <span *ngIf="form.get('password')?.touched && !form.get('password')?.valid"><i>Password is requred!!!!</i></span>
+            <span *ngIf="form.get('password')?.touched && !form.get('password')?.valid"><i>Password is
+                    requred!!!!</i></span>
 
             <label for="">Password</label>
             <input type="text" id="password-inp" placeholder="Password" formControlName="password">

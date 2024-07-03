@@ -1,6 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { LoginResponse, RegisterResponse, User } from '../Models/userModel';
+import { LoginRequest, LoginResponse, RegisterResponse, User } from '../Models/userModel';
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
 
@@ -18,7 +18,7 @@ export class AuthServiceService {
 
   }
 
-  loginUser(user: User): Observable<LoginResponse> {
+  loginUser(user: LoginRequest): Observable<LoginResponse> {
     return this.http.post<LoginResponse>(this.BaseURL + "login", user)
   }
 

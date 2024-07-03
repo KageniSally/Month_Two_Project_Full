@@ -12,7 +12,20 @@ export interface User {
     isDeleted: number
 }
 
+export interface LoginRequest{
+    email:string,
+    password:string
+}
 
+export interface RegisterRequest{
+    id: string,
+    name: string,
+    email: string,
+    password: string,
+    role_id: number,
+    isEmailSent: number,
+    isDeleted: number
+}
 
 
 export interface RegisterResponse {

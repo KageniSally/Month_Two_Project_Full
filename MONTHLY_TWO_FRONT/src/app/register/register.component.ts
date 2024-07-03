@@ -3,6 +3,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Route, Router, RouterModule } from '@angular/router';
 import { AuthServiceService } from '../../Services/auth-service.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../State';
+import { AuthActions } from '../State/Actions/auth.actions';
 
 @Component({
   selector: 'app-register',
@@ -16,7 +19,7 @@ export class RegisterComponent implements OnInit{
 
   errorPassword:string='Required'
 
-  constructor(private fb:FormBuilder, private auth:AuthServiceService,private router:Router){
+  constructor(private fb:FormBuilder, private store:Store<AppState>,private router:Router){
 
   }
 
@@ -29,11 +32,12 @@ this.form=new FormGroup({
 }
 
 onSubmit(){
-console.log(this.form)
-this.auth.registerUser(this.form.value).subscribe(res=>{
-  console.log(res.message)
-  this.router.navigate(['/login'])
-})
+// console.log(this.form)
+// this.auth.registerUser(this.form.value).subscribe(res=>{
+//   console.log(res.message)
+//   this.router.navigate(['/login'])
+// })
+this.store.dispatch(AuthActions.register({user:this.form.value}))
 }
 
 
