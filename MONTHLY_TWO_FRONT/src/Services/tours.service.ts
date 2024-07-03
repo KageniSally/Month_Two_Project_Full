@@ -26,4 +26,11 @@ export class ToursService {
     const headers = new HttpHeaders().set('token', token)
     return this.http.delete<TourResponse>(`${this.BaseURL}/${tourId}`, { headers });
   }
+
+  updateTour(hotelId: string, updatedTour: toursInterface): Observable<TourResponse> {
+    const token = localStorage.getItem('token') as string;
+    return this.http.put<TourResponse>(`${this.BaseURL}/${hotelId}`, updatedTour, {
+      headers: new HttpHeaders({ token: token })
+    });
+  }
 }

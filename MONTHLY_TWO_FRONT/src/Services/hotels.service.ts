@@ -33,4 +33,11 @@ export class HotelsService {
 
     return this.http.delete<hotelResponse>(`${this.BaseURL}/${hotelId}`,{headers})
   }
+
+  updateHotel(hotelId: string, updatedHotel: HotelInterface): Observable<hotelResponse> {
+    const token = localStorage.getItem('token') as string;
+    return this.http.put<hotelResponse>(`${this.BaseURL}/${hotelId}`, updatedHotel, {
+      headers: new HttpHeaders({ token: token })
+    });
+  }
 }
