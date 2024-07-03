@@ -18,7 +18,7 @@
                 <td>{{hotel.name}}</td>
                 <td>{{hotel.location}}</td>
                 <td> {{hotel.starRating}}</td>
-                <td><i class='bx bxs-edit-alt'></i>
+                <td><i class='bx bxs-edit-alt' (click)="update(hotel)"></i>
                     <i id="trash" class='bx bxs-trash' (click)="deleteHotel(hotel)"></i>
                 </td>
 

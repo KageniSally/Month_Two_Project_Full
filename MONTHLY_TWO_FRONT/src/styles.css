@@ -27,3 +27,7 @@
     color: rgb(17, 228, 17);
     font-style: italic;
 }
+.errorMessage{
+    color: red;
+    font-style: italic;
+}

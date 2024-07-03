@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { HotelInterface } from '../../Models/hotelModel';
 import { CommonModule } from '@angular/common';
 import { HotelsService } from '../../Services/hotels.service';
@@ -12,18 +12,18 @@ import { HotelsService } from '../../Services/hotels.service';
 })
 export class AdminHotelsDisplayComponent implements OnInit {
   hotels: HotelInterface[] = []
-  message!:string
+  message!: string
 
 
   constructor(private hotelsService: HotelsService) { }
   ngOnInit(): void {
     this.hotelsService.getHotels().subscribe(res => {
       console.log(res);
-      this.hotels=res
+      this.hotels = res
     });
   }
 
-  
+
 
 
   deleteHotel(hotel: HotelInterface): void {
@@ -41,4 +41,14 @@ export class AdminHotelsDisplayComponent implements OnInit {
       console.error('Hotel ID is undefined or null');
     }
   }
+
+  @Output() onAdd: EventEmitter<{ body: string }> = new EventEmitter()
+
+  update(hotel: HotelInterface) {
+    console.log(hotel)
+    this.onUpdate.emit(hotel)
+
+  }
+
+  @Output() onUpdate: EventEmitter<HotelInterface> = new EventEmitter()
 }

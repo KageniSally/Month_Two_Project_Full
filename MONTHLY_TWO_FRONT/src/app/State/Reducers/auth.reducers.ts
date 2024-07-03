@@ -1,6 +1,6 @@
 import { createReducer, on } from "@ngrx/store"
 import { AuthActions } from "../Actions/auth.actions"
-import { state } from "@angular/animations"
+
 
 export interface AuthInterface {
     loginSuccessMessage: string,

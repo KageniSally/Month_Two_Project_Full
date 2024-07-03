@@ -2,6 +2,10 @@ import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ToursService } from '../../Services/tours.service';
+import { Store } from '@ngrx/store';
+import { AppState } from '../State';
+import { TourActions } from '../State/Actions/tour.action';
+import { errorMessageSelector, successMessageSelector } from '../State/Selectors/tour.selector';
 
 @Component({
   selector: 'app-admin-tours-add',
@@ -14,7 +18,10 @@ export class AdminToursAddComponent implements OnInit {
   form!: FormGroup
   message!: string
 
-  constructor(private fb: FormBuilder, private tourService: ToursService) { }
+  successMessage$ = this.store.select(successMessageSelector)
+  errorMessage$=this.store.select(errorMessageSelector)
+
+  constructor(private fb: FormBuilder, private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -38,15 +45,21 @@ export class AdminToursAddComponent implements OnInit {
 
   onSubmit() {
     console.log(this.form)
-    this.tourService.addTour(this.form.value).subscribe(res => {
-      this.message = res.message
+    // this.tourService.addTour(this.form.value).subscribe(res => {
+    //   this.message = res.message
 
 
-      setTimeout(() => {
-        this.message = ""
-        this.form.reset()
-      }, 2000)
+    //   setTimeout(() => {
+    //     this.message = ""
+    //     this.form.reset()
+    //   }, 2000)
 
-    })
+    // })
+
+    this.store.dispatch(TourActions.addTour({ tour: this.form.value }))
+    setTimeout(() => {
+
+    }, 2000)
+    this.form.reset()
   }
 }
